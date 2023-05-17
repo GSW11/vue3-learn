@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  
+  <div id="app">
+
+
+
+  </div>
+
+  <script>
+
+    const { createApp, watch, reactive } = Vue
+
+    createApp({
+      setup() {
+        const obj = reactive({ count: 0, deepObj: { num: 1 } })
+
+        // 依赖关系明确，精确地控制副作用的触发时机
+        watch(
+          () => obj.deepObj,
+          (newV, oldV) => {
+            console.log(oldV, newV)
+          },
+          { 
+            deep: true, // 强制转换为深层监听器（监听对象的所有变化） （newV === oldV）
+            immediate: true // 立即执行，改变时再次执行 （用于初次请求数据）
+          } 
+        )
+
+        obj.deepObj.num++
+        // obj.deepObj = {}
+      }
+    }).mount("#app")
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    
+  </div>
+
+  <script type="module">
+    import { reactive } from './compile/reactive.js'
+    import { effect } from './compile/effect.js'
+
+    const user = reactive({
+      name: '小涛',
+      age: 18,
+      foo: {
+        bar: 0
+      }
+    })
+
+    effect(() => {
+      document.querySelector('#app').innerText = `${user.name} - ${user.age} - ${user.foo.bar}`
+    })
+
+    setTimeout(() => {
+      user.name = '大涛'
+      setTimeout(() => {
+        user.age = 22
+        setTimeout(() => {
+          user.foo.bar = 1
+        }, 1000)
+      }, 1000)
+    }, 1000)
+  </script>
+</body>
+</html>
