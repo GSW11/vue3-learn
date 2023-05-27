@@ -67,9 +67,11 @@ let name = computed<string>({
 
 let changeName = () => {
   name.value = '小-涛'
+  // name2.value = '小-涛'
 }
 
   // (2) 函数式写法 只能支持一个getter函数 不允许接收参数修改值
+  // 得到的值是readonly属性
 let name2 = computed(() => firstName.value + '-' + lastName.value)
 
 
