@@ -13,6 +13,13 @@
 import { ref, reactive } from 'vue'
 import { axios } from '@/utils/axios'
 
+// const data = {
+//   name: 'abc',
+//   url: 'https://picx.zhimg.com/v2-99a54b34f55f88404d02da16e3b2bde7_b.jpg',
+//   age: 22,
+//   comment: '111'
+// }
+
 interface Data {
   data: {
     name: string,

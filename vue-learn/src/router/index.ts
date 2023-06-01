@@ -39,6 +39,16 @@ const router = createRouter({
       component: () => import('@/views/Basic/LifeCycle.vue')
     },
     {
+      path: '/provideinject',
+      name: 'ProvideInject',
+      component: () => import('@/views/Basic/Provide&Inject.vue')
+    },
+    {
+      path: '/vmodel',
+      name: 'VModel',
+      component: () => import('@/views/Basic/VModel.vue')
+    },
+    {
       path: '/component-pass-data',
       name: 'Component-Pass-Data',
       component: () => import('@/views/Components/Component-Pass-Data.vue')
@@ -57,6 +67,26 @@ const router = createRouter({
       path: '/async-component',
       name: 'Async-Component',
       component: () => import('@/views/Components/Async-Component.vue')
+    },
+    {
+      path: '/teleport',
+      name: 'Teleport',
+      component: () => import('@/views/Built-in-Components/Teleport.vue')
+    },
+    {
+      path: '/keepalive',
+      name: 'KeepAlive',
+      component: () => import('@/views/Built-in-Components/KeepAlive.vue')
+    },
+    {
+      path: '/transition',
+      name: 'Transition',
+      component: () => import('@/views/Built-in-Components/Transition.vue')
+    },
+    {
+      path: '/transitiongroup',
+      name: 'TransitionGroup',
+      component: () => import('@/views/Built-in-Components/TransitionGroup.vue')
     },
     {
       path: '/layout',
