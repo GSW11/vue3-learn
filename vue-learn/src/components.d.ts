@@ -22,6 +22,7 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     Skeleton: typeof import('./components/SyncSkeleton/Skeleton.vue')['default']
     Tree: typeof import('./components/Tree.vue')['default']
+    VmodelVue: typeof import('./components/VmodelVue/VmodelVue.vue')['default']
     WaterFall: typeof import('./components/WaterFall.vue')['default']
   }
 }

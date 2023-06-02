@@ -49,6 +49,11 @@ const router = createRouter({
       component: () => import('@/views/Basic/VModel.vue')
     },
     {
+      path: '/customdirective',
+      name: 'CustomDirective',
+      component: () => import('@/views/Basic/CustomDirective.vue')
+    },
+    {
       path: '/component-pass-data',
       name: 'Component-Pass-Data',
       component: () => import('@/views/Components/Component-Pass-Data.vue')
@@ -87,6 +92,11 @@ const router = createRouter({
       path: '/transitiongroup',
       name: 'TransitionGroup',
       component: () => import('@/views/Built-in-Components/TransitionGroup.vue')
+    },
+    {
+      path: '/lazyload-directive',
+      name: 'LazyLoad-Directive',
+      component: () => import('@/views/ApplicationPractices/LazyLoad-Directive.vue')
     },
     {
       path: '/layout',
