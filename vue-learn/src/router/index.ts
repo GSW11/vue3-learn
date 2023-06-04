@@ -54,6 +54,16 @@ const router = createRouter({
       component: () => import('@/views/Basic/CustomDirective.vue')
     },
     {
+      path: '/customhooks',
+      name: 'CustomHooks',
+      component: () => import('@/views/Basic/CustomHooks.vue')
+    },
+    {
+      path: '/nexttick',
+      name: 'NextTick',
+      component: () => import('@/views/Basic/NextTick.vue')
+    },
+    {
       path: '/component-pass-data',
       name: 'Component-Pass-Data',
       component: () => import('@/views/Components/Component-Pass-Data.vue')

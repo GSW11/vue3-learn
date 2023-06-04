@@ -1,17 +1,23 @@
-export const axios = {
-  get<T>(url: string): Promise<T> {
-    return new Promise((resolve) => {
-      const xhr = new XMLHttpRequest()
-      xhr.open('GET', url)
+import axios from 'axios'
 
-      xhr.onreadystatechange = () => {
-        if(xhr.readyState === 4 && xhr.status === 200) {
-          setTimeout(() => {
-            resolve(JSON.parse(xhr.responseText))
-          }, 2000)
-        }
-      }
-      xhr.send(null)
-    })
+const instance = axios.create()
+
+axios.interceptors.request.use(
+  config => {
+    return config
+  },
+  error => {
+    return Promise.reject(error)
   }
-}
+)
+
+axios.interceptors.response.use(
+  response => {
+    return response
+  },
+  error => {
+    return Promise.reject(error)
+  }
+)
+
+export default instance

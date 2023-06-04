@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import { axios } from '@/utils/axios'
+import axios from '@/utils/axios'
 
 // const data = {
 //   name: 'abc',
@@ -21,12 +21,10 @@ import { axios } from '@/utils/axios'
 // }
 
 interface Data {
-  data: {
-    name: string,
-    age: number,
-    url: string,
-    comment: string
-  }
+  name: string,
+  age: number,
+  url: string,
+  comment: string
 }
 
 const { data } = await axios.get<Data>('./data.json')

@@ -7,6 +7,9 @@
 </template>
 
 <script setup lang="ts">
+// 自定义指令生命周期钩子 created - unmounted
+// 支持两个参数，mounted (el, binding) {} 内置参数el(DOM元素) 自定义传参binding
+// 函数简写（只触发mounted和updated）
 import type { Directive } from 'vue'
 
 // permission
